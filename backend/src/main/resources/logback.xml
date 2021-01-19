@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property resource="terminal-autoconsulta.properties" />
+	<property file="${jboss.server.config.dir}/terminal-autoconsulta.properties" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d %-4relative [%thread] %-5level %logger{35}:%L - %msg</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="AppenderDiario" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${jboss.server.log.dir}/terminal-autoconsulta.log</file>
+		<append>true</append>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${jboss.server.log.dir}/terminal-autoconsulta.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>250MB</maxFileSize>
+			<maxHistory>45</maxHistory>
+			<totalSizeCap>3GB</totalSizeCap>
+		</rollingPolicy>
+
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d %-4relative [%thread] %-5level %logger{35}:%L - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.springframework" level="${logging.level.org.springframework}" additivity="true" />
+	<logger name="org.hibernate" level="${logging.level.org.hibernate}" additivity="true" />
+	<logger name="com.imagosur" level="${logging.level.com.imagosur}" additivity="true" />
+	<logger name="com.imagosur.security" level="${logging.level.com.imagosur.security}" additivity="true" />
+
+	<root level="${logging.level.root}">
+		<appender-ref ref="AppenderDiario" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* ESTILOS DE CUERPO */
+  body { 
+    font-family: 'Roboto', sans-serif; 
+  }
+
+  #cuerpo {
+    background-image: url("~@/assets/bg.png");
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ESTILOS DE BOTONES*/
+  .btnVista{
+    width: 100%;
+  }
+
+  .btnVista img{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.45);
+    border-radius: 22px;
+    margin-bottom: 4%;
+  }
+
+  .btnVista.last img{
+    margin-bottom: 1%
+  }
+
+  .btnVista p{
+    color: white;
+    text-align: center;
+  }
+
+  .botones button.alt {
+    background-color: transparent;
+  }
+
+  .botones button {
+    width: 55%;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    outline:none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+  }
+
+  button.summary{
+    width: 90%;
+  }
+
+  button.summary div{
+    padding: 1.5%;
+  }
+
+  button.summary img{
+    margin-bottom: 0;
+  }
+
+  button.summary.buttonOn img{
+    box-shadow: 1px 1px 10px rgba(255,255,255,0.45);
+    border: white solid 5px;
+  }
+  
+
+  .botones .alt a{
+    padding: 1.5%;
+  }
+
+
+  /* *ESTILOS DE INPUT - SELECT - OPTION* */
+  ::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+
+  input, select, option,label{
+    -webkit-appearance:none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 3.5vh; 
+  }
+  
+  input{
+
+      background-color: rgba(255,255,255, 0.3);
+      border: none;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      border-radius: 15px;
+      width: 100%;
+      
+  }
+
+  .select-custom{
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      right: 0;
+      height: 100%;
+  }
+
+  .select-custom-div{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 3.5vh;
+  }
+
+  .option-custom-div{
+    position: fixed;
+    display: flex;
+    margin-top: -11px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 3.5vh;
+    z-index: 2;
+  }
+
+  /*OPTION DEPENDIENDO LAS COLUMNAS DESIGNADAS*/
+
+  .row .col-2 .option-custom-div{
+    width: 13.4%;
+  }
+
+  .row .col-3 .option-custom-div{
+    width: 19.25%;
+  }
+
+  .row .col-7 .option-custom-div{
+    width: 41.4%;
+  }
+
+  .option-custom-div ul{
+    margin-bottom: 0;
+  }
+
+  .option-custom-div > div > div{
+    background-color: rgba(255, 255, 255, 0.795);
+    color: #394d8a;
+    border-radius: 0px 0px 20px 20px;
+    /*text-shadow: 0px 0px 15px rgb(68, 0, 255);*/
+  }
+
+  .option-custom-div ul li:hover{
+    background-color: #2d73af;
+    color: #fff;
+    /*text-shadow: 0px 0px 15px rgb(68, 0, 255);*/
+  }
+
+  .select-custom-correo{
+      position: relative;
+  }
+
+  .select-custom select{
+      background-color: rgba(255,255,255,0.3);
+      width: 100%;
+      color: white;
+      border: none;
+      box-shadow: none;
+      display: inline-block;
+      border-radius: 10px;
+      padding: 10px;
+      padding-left: 48px;
+  }
+
+  .select-custom-div div{
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+    color: white;
+    border: none;
+    box-shadow: none;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .select-custom-div-push div{
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  .select-custom select:hover, input:hover, .select-custom-div div:hover{
+      background-color:rgba(255,255,255, 0.4);
+
+    }
+
+  .select-custom:hover i, .select-custom-div:hover i{
+    margin-top: 2%;
+  }
+
+  .select-custom-div:hover i.ico_dni, .select-custom-div:hover i.ico_gender{
+    margin-top: 0;
+  }
+  
+  input[type="checkbox"]{
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+  }
+
+  .check{
+    position: relative;
+    display: block;
+    font-size: 11px;
+    color: white;
+    margin-bottom: 0px;
+    text-shadow: 1px 1px 12px rgba(0,0,0,0.65);
+  }
+
+  .check input[type="checkbox"] + i{
+    background: rgb(0,71,176);
+    position: absolute; 
+    margin-left: 10px;
+    top: 0;
+  }
+
+  .check input[type="checkbox"] + i{
+    width: 40px;
+    height: 16px;
+    border-radius: 15px;
+  }
+
+  .check input[type=checkbox] + i:before{
+    content: '';
+    place-content: 20px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    -webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+  }
+
+  .check input[type=checkbox] + i:after{
+    content: 'No';
+    position: absolute;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    top: 0px;
+    left: 20px;
+    opacity: 1;
+    transition: all 0.10s ease 0.10s;
+  }
+
+  .check input[type=checkbox]:checked + i:before{
+    left: 24px;
+    -webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
+  }
+   
+  .check input[type=checkbox]:checked + i{
+   background: #2AC176;
+  }
+
+  .check input[type=checkbox]:checked + i:after{
+    content: 'SI';
+    position: absolute;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    top: 0px;
+    left: 4px;
+    opacity: 0;
+    transition: all 0.25s ease 0.25s;
+  }
+  
+   
+  .check input[type=checkbox]:checked + i:after{
+   opacity: 1;
+  }
+
+  input[type="button"]{
+    background-color: rgb(50, 120, 183);
+    width: 30%;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.45);
+  }
+
+  input[type="button"]:hover{
+    background-color: rgb(20, 89, 150);
+  }
+
+  .ico_right{
+    position: absolute;
+    right: 26px;
+    top: calc(50% - 12px);
+    width: 12px;
+    height: 12px;
+    display: block;
+    
+  }
+
+  .ico_flecha{
+    border-left:2px solid #FFFFFF;
+    border-bottom:2px solid rgb(230, 230, 230);
+    transform: rotate(-45deg); /* Giramos el cuadrado */
+    transition: all 0.25s ease;
+  }
+
+  .ico_left{
+    position: absolute;
+    left: 25px;
+    top: calc(50% - 12px);
+    width: 22px;
+    height: 17px;
+    display: block;
+    transform: none;
+    transition: none;
+    border: none;
+  }
+  .ico_dni{
+    content: url("~@/assets/ico/document.png");
+    width: 22px;
+  }
+
+  .ico_gender{
+    content: url("~@/assets/ico/gender.png");
+    width: 22px;
+    height: 22px;
+  }
+
+  .ico_usuario{
+    content: url("~@/assets/ico/user.png");
+    width: 16px;
+    height: 18px;
+  }  
+
+  .ico_fecha{
+    content: url("~@/assets/ico/calendar.png");
+    width: 16px;
+    height: 18px;
+  }  
+
+  .ico_pass{
+    content: url("~@/assets/ico/pass.png");
+    width: 15px;
+    height: 18px;
+  }  
+
+  .ico_ojo{
+    content: url("~@/assets/ico/eye.png");
+    width: 22px;
+    height: 15px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  .centrar{
+    margin: 0 auto;
+  }
+
+  .derecha{
+    margin-right: auto;
+  }
+
+  .izquierda{
+    margin-left: auto;
+    padding: 0;
+  }
+  .centrado{
+    padding-left: 0;
+    margin-top: 1%;
+  }
+
+  .icoPadding{
+    left: 30px;
+  }
+
+  /*Load*/
+
+  .load img{
+    width: 8%;
+    height: 8%;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+
+.load span{
+    width: 100%;
+    font-weight: 400;
+}
+
+.load-w span{
+  color: white;
+}
+
+.load-b span{
+  color: #0083cb;
+}
+
+.load-xl span{
+  font-size: 40px;
+  text-align: center;
+}
+
+.load-xl img {
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+.aviso h4{
+  color: brown;
+}
+
+.aviso-true h4{
+  color: white;
+}
+
+.aviso{
+  padding: 3%;
+  padding-top: 4%;
+  border-radius: 50px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+/* MARGENES DEFINIDOS*/
+
+
+.margin-top-0{
+  margin-top: 0;
+}
+
+.divBoton{
+  padding: 1%;
+}
+
+a:hover{
+  text-decoration: none;
+}
+.contenedor-principal{
+  width: 80%;
+}
